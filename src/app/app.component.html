@@ -3,7 +3,9 @@
     <app-sidebar></app-sidebar>
     <div id="layoutSidenav_content">
         <main>
-            <app-home></app-home>
+            <div id="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
         </main>
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid">
