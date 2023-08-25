@@ -9,13 +9,25 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">ID:</label>
-                    <input type="text" class="form-control" id="id" disabled>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="id" 
+                    name="id"
+                    [ngModel]="cliente.id"
+                    disabled>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Data de Cadastro:</label>
-                    <input type="text" class="form-control" id="dataCadastro" disabled>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="dataCadastro" 
+                    name="dataCadastro"
+                    [ngModel]="cliente.dataCadastro" 
+                    disabled>
                 </div>
             </div>
         </div>
@@ -23,19 +35,32 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Nome: *</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Informe seu nome...">
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="nome" 
+                    name="nome"
+                    placeholder="Informe seu nome..." 
+                    [(ngModel)]="cliente.nome" 
+                    >
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">CPF: *</label>
-                    <input type="text" class="form-control" id="cpf" placeholder="Informe seu CPF...">
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="cpf" 
+                    name="cpf"
+                    placeholder="Informe seu CPF..."
+                    [(ngModel)]="cliente.cpf">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-success" (click)="clicar()">
                     <i class="fa fa-save"></i>
                     Salvar
                 </button>
