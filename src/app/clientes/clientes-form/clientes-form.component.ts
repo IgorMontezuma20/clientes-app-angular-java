@@ -18,7 +18,7 @@ export class ClientesFormComponent implements OnInit {
 
   }
 
-  clicar(){
+  onSubmit(){
     console.log(this.cliente);
   }
 
