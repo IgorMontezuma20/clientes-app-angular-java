@@ -12,7 +12,7 @@ export class ClientesFormComponent implements OnInit {
   cliente: Cliente;
 
   constructor(private service: ClientesService){
-    this.cliente = service.getCliente();
+    this.cliente = new Cliente();
   }
 
   ngOnInit(): void{
@@ -20,7 +20,11 @@ export class ClientesFormComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.cliente);
+    this.service
+    .saveClient(this.cliente)
+    .subscribe(response =>{
+      console.log(response);
+    });
   }
 
 }
