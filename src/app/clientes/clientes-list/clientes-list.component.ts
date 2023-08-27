@@ -12,6 +12,8 @@ export class ClientesListComponent implements OnInit {
 
   clientes: Cliente[] = [];
   selectedClient: Cliente;
+  successMessage: string;
+  errorMessage: string;
 
   constructor(
     private service: ClientesService, 
@@ -29,6 +31,15 @@ export class ClientesListComponent implements OnInit {
 
   modalForDeletion(cliente: Cliente){
     this.selectedClient = cliente;
+  }
+
+  deleteClient(){
+    this.service
+    .deleteClient(this.selectedClient)
+    .subscribe(
+      response => {this.successMessage = "Cliente removido com sucesso!",
+      this.ngOnInit()},
+      error => this.errorMessage = 'Ocorreu um erro ao remover este cliente.');
   }
 
 }
