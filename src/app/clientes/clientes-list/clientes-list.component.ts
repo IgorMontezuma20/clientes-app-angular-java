@@ -11,6 +11,7 @@ import { ClientesService } from 'src/app/clientes.service';
 export class ClientesListComponent implements OnInit {
 
   clientes: Cliente[] = [];
+  selectedClient: Cliente;
 
   constructor(
     private service: ClientesService, 
@@ -26,5 +27,8 @@ export class ClientesListComponent implements OnInit {
     this.router.navigate(['/clientes-form'])
   }
 
+  modalForDeletion(cliente: Cliente){
+    this.selectedClient = cliente;
+  }
 
 }

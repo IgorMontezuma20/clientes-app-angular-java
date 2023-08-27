@@ -35,10 +35,35 @@
                                 <i class="fa fa-user-edit"></i>
                                 Editar
                             </button>
+                            <button
+                             class="btn btn-danger" 
+                             data-toggle="modal" 
+                             data-target="#modalDelete"
+                             (click)="modalForDeletion(cliente)">
+                                <i class="fa fa-trash"></i>
+                                Deletar
+                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <div id="modalDelete" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+                <div class="modal-body" *ngIf="selectedClient">
+                    Deseja confirmar a exclusão do(a) cliente: "{{ selectedClient.nome }}" ?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Confirmar</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
