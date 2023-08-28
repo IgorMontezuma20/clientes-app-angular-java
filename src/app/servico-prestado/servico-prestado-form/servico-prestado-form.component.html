@@ -8,13 +8,68 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Cliente: </label>
-                    <select class="form-control">
+                    <select class="form-control" 
+                    [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="servico.idCliente">
                         <option value="">Selecione...</option>
-                        <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+                        <option 
+                        *ngFor="let cliente of clientes" 
+                        [ngValue]="cliente.id">
                             {{ cliente.nome}}
                         </option>
                     </select>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Descrição:</label>
+                    <input 
+                    class="form-control"
+                    type="text" 
+                    id="inputDescricao" 
+                    name="descricao"
+                    placeholder="Adicione uma descrição..."
+                    [(ngModel)]="servico.descricao">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Preço:</label>
+                    <input 
+                    class="form-control"
+                    type="text" 
+                    id="inputPreco" 
+                    name="preco"
+                    placeholder="Informe o preço..."
+                    [(ngModel)]="servico.preco">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Data:</label>
+                    <input 
+                    class="form-control"
+                    type="text" 
+                    id="inputData" 
+                    name="data"
+                    placeholder="Informe o preço..."
+                    [(ngModel)]="servico.data">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <button 
+                class="btn btn-success" 
+                type="submit">
+                <i class="fa fa-save"></i>
+                Salvar
+                </button>
             </div>
         </div>
     </form>
