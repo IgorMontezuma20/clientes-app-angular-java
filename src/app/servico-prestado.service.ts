@@ -24,10 +24,9 @@ export class ServicoPrestadoService {
 
     const httpParams = new HttpParams()
     .set("nome", nome)
-    .set("mes", mes.toString());
+    .set("mes", mes ? mes.toString() : "");
 
-    const url = this.apiURL + "?" + httpParams.toString()
-    console.log(url)
-    return this.http.get<any>(url)
+    const url = this.apiURL + "?" + httpParams.toString();
+    return this.http.get<any>(url);
   }
 }
