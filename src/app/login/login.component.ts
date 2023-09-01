@@ -26,10 +26,11 @@ export class LoginComponent {
     this.authService
     .tryToLogin(this.userName, this.password)
     .subscribe(response => {
-      console.log(response);
-      this.router.navigate(['/home'])
+      const access_token = JSON.stringify(response);
+      localStorage.setItem('access_token', access_token);
+      this.router.navigate(['/home']);
     }, errorResponse => {
-      this.errors = ['Usuário e/ou senha incorretos.']
+      this.errors = ['Usuário e/ou senha incorretos.'];
     })
 
   }
