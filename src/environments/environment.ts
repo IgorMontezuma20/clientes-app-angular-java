@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     apiBaseURL: 'clientes-app-production.up.railway.app/',
     clientId: 'my-angular-app',
     clientSecret: '@321',
